@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      /**
+       * @param {number} x
+       * @return {boolean}
+       */
+      var isPalindrome = function (x) {
+        if (x < 0) return false
+        let res = 0
+        let i = x
+        while (x !== 0) {
+          let temp = x % 10
+          res = res * 10 + temp
+          x = parseInt(x / 10)
+        }
+        if (res === i) {
+          return true
+        } else {
+          return false
+        }
+      };
+    </script>
+  </body>
+</html>
