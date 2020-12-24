@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <img src="xxx.png" alt="">
+    <script>
+      function fun1() {
+        console.log('1->begin')
+        error
+        console.log('1->end')
+      }
+      window.onerror = (...args) => {
+        console.log('onerror:',args)
+      }
+      
+      setTimeout(() => {
+        fun1()
+      })
+
+      window.addEventListener('error', args => {
+          console.log(
+            'error event:', args
+          );
+          return true;
+        }, 
+        true // 利用捕获方式
+      );
+    </script>
+  </body>
+</html>
